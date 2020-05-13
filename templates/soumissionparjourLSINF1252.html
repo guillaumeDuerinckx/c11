@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>soumissionparjourLSINF1252</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='page.css') }}">
+        <script src="static/Chart.bundle.min.js"></script>
+    </head>
+    <body>
+     <header>
+      <nav class="menu">
+       <div class="inner">
+        <div class="m-left">
+         <h1 class="logo"><a href="{{url_for('accueil')}}" class="logo"><img src= "{{url_for('static', filename='inginious.png')}}" width="65" height="60" class="images">    Statistiques-INGInious</a></h1>
+        </div>
+        <div class="m-right">
+          <div class="menu_déroulant">
+           <li class= "déroulant"><a href="#" class= "lien" ><img src= "{{url_for('static', filename='livre.jpg')}}" width="30" height="25" class="image">   LSINF1101</li></a>
+            <ul class= "sous">
+             <li><a href="{{url_for('résultatLSINF1101')}}">  Résultat </li></a>
+             <li><a href="{{url_for('soumissionparjourLSINF1101')}}">  page 3 </li></a>
+             <li><a href="{{url_for('batônnetsLSINF1101')}}">  page 4 </li></a>
+            </ul>
+          </div>
+        </div>
+        <div class="m-right">
+          <div class="menu_déroulant">
+           <li class= "déroulant"><a href="#" class= "lien" ><img src= "{{url_for('static', filename='livre.jpg')}}" width="30" height="25" class="image">   LSINF1252</li></a>
+            <ul class= "sous">
+             <li><a href="{{url_for('résultatLSINF1252')}}"> Résultat </li></a>
+             <li><a href="{{url_for('soumissionparjourLSINF1252')}}"> page 6 </li></a>
+             <li><a href="{{url_for('batônnetsLSINF1252')}}"> page 7 </li></a>
+            </ul>
+          </div>
+        </div>
+        <div class="m-right">
+         <div class="menu_déroulant">
+          <li class= "déroulant"><a href="#" class= "lien" ><img src= "{{url_for('static', filename='livre.jpg')}}" width="30" height="25" class="image">   LEPL1402</li></a>
+           <ul class= "sous">
+            <li><a href="{{url_for('résultatLEPL1402')}}"> Résultat </li></a>
+            <li><a href="{{url_for('soumissionparjourLEPL1402')}}"> page 9 </li></a>
+            <li><a href="{{url_for('batônnetsLEPL1402')}}"> page 10 </li></a>
+           </ul>
+         </div>
+        </div>
+        <div class="m-right">
+         <a href="{{url_for('page_contact')}}" class= "lien" ><img src= "{{url_for('static', filename='téléphone.jpg')}}" width="30" height="25" class="image">   CONTACT</a>
+        </div>
+       </div>
+      </nav>
+     </header>
+      <canvas id="graphique" width="200px" height="200px"></canvas>
+      <script>
+    var ctx = document.getElementById('graphique').getContext('2d');
+    var myChart = new Chart(ctx, {type: 'bar',data: {labels: ['Jean', 'Martine', 'Michel', 'Jules', 'Louise', 'Dominique'],datasets: [{label: 'votes',data: [12, 19, 3, 5, 2, 3]}]}});
+      </script>
+     <footer class="menu2">
+      <div class="lien2">
+      </div>
+     </footer>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+
+allez dans le dossier stat_inginious
+
+set FLASK_APP=_init_.py
+
+set FLASK_ENV=development
+
+flask run
+
+
+http://127.0.0.1:5000/
+ voila
