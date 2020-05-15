@@ -8,6 +8,7 @@
     </head>
     <body>
      <header>
+      <header>
       <nav class="menu">
        <div class="inner">
         <div class="m-left">
@@ -17,9 +18,9 @@
           <div class="menu_déroulant">
            <li class= "déroulant"><a href="#" class= "lien" ><img src= "{{url_for('static', filename='livre.jpg')}}" width="30" height="25" class="image">   LSINF1101</li></a>
             <ul class= "sous">
-             <li><a href="{{url_for('résultatLSINF1101')}}">  Résultat </li></a>
-             <li><a href="{{url_for('soumissionparjourLSINF1101')}}">  page 3 </li></a>
-             <li><a href="{{url_for('batônnetsLSINF1101')}}">  page 4 </li></a>
+             <li><a href="{{url_for('résultatLSINF1101')}}">  Soumissions </li></a>
+             <li><a href="{{url_for('soumissionparjourLSINF1101')}}">  Timeline </li></a>
+             <li><a href="{{url_for('batônnetsLSINF1101')}}"> Exercices </li></a>
             </ul>
           </div>
         </div>
@@ -27,9 +28,9 @@
           <div class="menu_déroulant">
            <li class= "déroulant"><a href="#" class= "lien" ><img src= "{{url_for('static', filename='livre.jpg')}}" width="30" height="25" class="image">   LSINF1252</li></a>
             <ul class= "sous">
-             <li><a href="{{url_for('résultatLSINF1252')}}"> Résultat </li></a>
-             <li><a href="{{url_for('soumissionparjourLSINF1252')}}"> page 6 </li></a>
-             <li><a href="{{url_for('batônnetsLSINF1252')}}"> page 7 </li></a>
+             <li><a href="{{url_for('résultatLSINF1252')}}"> Soumissions </li></a>
+            <li><a href="{{url_for('soumissionparjourLSINF1252')}}"> Timeline </li></a>
+            <li><a href="{{url_for('batônnetsLSINF1252')}}"> Exercices </li></a>
             </ul>
           </div>
         </div>
@@ -37,9 +38,9 @@
          <div class="menu_déroulant">
           <li class= "déroulant"><a href="#" class= "lien" ><img src= "{{url_for('static', filename='livre.jpg')}}" width="30" height="25" class="image">   LEPL1402</li></a>
            <ul class= "sous">
-            <li><a href="{{url_for('résultatLEPL1402')}}"> Résultat </li></a>
-            <li><a href="{{url_for('soumissionparjourLEPL1402')}}"> page 9 </li></a>
-            <li><a href="{{url_for('batônnetsLEPL1402')}}"> page 10 </li></a>
+            <li><a href="{{url_for('résultatLEPL1402')}}"> Soumissions </li></a>
+            <li><a href="{{url_for('soumissionparjourLEPL1402')}}"> Timeline </li></a>
+            <li><a href="{{url_for('batônnetsLEPL1402')}}"> Exercices </li></a>
            </ul>
          </div>
         </div>
@@ -55,8 +56,13 @@
     var myChart = new Chart(ctx, {type: 'bar',data: {labels: ['Jean', 'Martine', 'Michel', 'Jules', 'Louise', 'Dominique'],datasets: [{label: 'votes',data: [12, 19, 3, 5, 2, 3]}]}});
       </script>
      <footer class="menu2">
-      <div class="lien2">
-      </div>
+       <div class="lien2">
+        FONDATEUR DU SITE :
+           <a href="{{url_for('page_contact')}}"class= "lien">  ALEXANDRE VANDERVALE</a>
+           <a href="{{url_for('page_contact')}}"class= "lien">  GUILLAUME DUERINCKX</a>
+           <a href="{{url_for('page_contact')}}"class= "lien">  ADRIEN TALOM</a>
+           ©Copyright 2019-2020 STAT-INGINIOUS
+       </div>
      </footer>
     </body>
 </html>
