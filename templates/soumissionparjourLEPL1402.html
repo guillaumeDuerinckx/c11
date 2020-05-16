@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>soumissionparjourLEPL1402</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='page.css') }}">
+        <script src="static/Chart.bundle.min.js"></script>
+    </head>
+    <body>
+     <header>
+      <nav class="menu">
+       <div class="inner">
+        <div class="m-left">
+         <h1 class="logo"><a href="{{url_for('accueil')}}" class="logo"><img src= "{{url_for('static', filename='inginious.png')}}" width="65" height="60" class="images">    Statistiques-INGInious</a></h1>
+        </div>
+        <div class="m-right">
+          <div class="menu_déroulant">
+           <li class= "déroulant"><a href="#" class= "lien" ><img src= "{{url_for('static', filename='livre.jpg')}}" width="30" height="25" class="image">   LSINF1101</li></a>
+            <ul class= "sous">
+             <li><a href="{{url_for('résultatLSINF1101')}}">  Soumissions </li></a>
+             <li><a href="{{url_for('soumissionparjourLSINF1101')}}">  Timeline </li></a>
+             <li><a href="{{url_for('batônnetsLSINF1101')}}"> Exercices </li></a>
+            </ul>
+          </div>
+        </div>
+        <div class="m-right">
+          <div class="menu_déroulant">
+           <li class= "déroulant"><a href="#" class= "lien" ><img src= "{{url_for('static', filename='livre.jpg')}}" width="30" height="25" class="image">   LSINF1252</li></a>
+            <ul class= "sous">
+             <li><a href="{{url_for('résultatLSINF1252')}}"> Soumissions </li></a>
+            <li><a href="{{url_for('soumissionparjourLSINF1252')}}"> Timeline </li></a>
+            <li><a href="{{url_for('batônnetsLSINF1252')}}"> Exercices </li></a>
+            </ul>
+          </div>
+        </div>
+        <div class="m-right">
+         <div class="menu_déroulant">
+          <li class= "déroulant"><a href="#" class= "lien" ><img src= "{{url_for('static', filename='livre.jpg')}}" width="30" height="25" class="image">   LEPL1402</li></a>
+           <ul class= "sous">
+            <li><a href="{{url_for('résultatLEPL1402')}}"> Soumissions </li></a>
+            <li><a href="{{url_for('soumissionparjourLEPL1402')}}"> Timeline </li></a>
+            <li><a href="{{url_for('batônnetsLEPL1402')}}"> Exercices </li></a>
+           </ul>
+         </div>
+        </div>
+        <div class="m-right">
+         <a href="{{url_for('page_contact')}}" class= "lien" ><img src= "{{url_for('static', filename='téléphone.jpg')}}" width="30" height="25" class="image">   CONTACT</a>
+        </div>
+       </div>
+      </nav>
+     </header>
+      <div style="width: 90%">
+         <canvas style="width: 30% ; height: auto;" id="barChart"></canvas>
+    </div>
+      <script>
+        var ctx = document.getElementById("barChart");
+
+        // Global Options:
+        Chart.defaults.global.defaultFontColor = 'black';
+        Chart.defaults.global.defaultFontSize = 16;
+
+        var data = {
+            labels : {{ labels|safe }},
+            datasets: [{
+                label:'success',
+                fill: true,
+                lineTension: 0.1,
+                backgroundColor: "rgba(167,105,0,0.4)",
+                borderColor: "rgb(167, 105, 0)",
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: "white",
+                pointBackgroundColor: "black",
+                pointBorderWidth: 1,
+                pointHoverRadius: 8,
+                pointHoverBackgroundColor: "brown",
+                pointHoverBorderColor: "yellow",
+                pointHoverBorderWidth: 2,
+                pointRadius: 4,
+                pointHitRadius: 10,
+                  // notice the gap in the data and the spanGaps: true
+                data: {{ datasuccess }},
+                spanGaps: true,
+            }, {
+                label:'failed',
+                fill: true,
+                lineTension: 0.1,
+                backgroundColor: "rgba(225,0,0,0.4)",
+                borderColor: "red", // The main line color
+                borderCapStyle: 'square',
+                borderDash: [], // try [5, 15] for instance
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: "black",
+                pointBackgroundColor: "white",
+                pointBorderWidth: 1,
+                pointHoverRadius: 8,
+                pointHoverBackgroundColor: "yellow",
+                pointHoverBorderColor: "brown",
+                pointHoverBorderWidth: 2,
+                pointRadius: 4,
+                pointHitRadius: 10,
+                  // notice the gap in the data and the spanGaps: false
+                data: {{ datafail }},
+                spanGaps: false,
+            }]
+        };
+
+            // Notice the scaleLabel at the same level as Ticks
+        var options = {
+            scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        },
+                        scaleLabel: {
+                             display: true,
+                             labelString: 'Soumissions',
+                             fontSize: 20
+                          }
+                    }]
+                }
+        };
+
+            // Chart declaration:
+        var barChart = new Chart(ctx, {
+          type: 'line',
+          data: data,
+          options: options
+        });
+      </script>
+     <footer class="menu2">
+       <div class="lien2">
+        FONDATEUR DU SITE :
+           <a href="{{url_for('page_contact')}}"class= "lien">  ALEXANDRE VANDERVALE</a>
+           <a href="{{url_for('page_contact')}}"class= "lien">  GUILLAUME DUERINCKX</a>
+           <a href="{{url_for('page_contact')}}"class= "lien">  ADRIEN TALOM</a>
+           ©Copyright 2019-2020 STAT-INGINIOUS
+       </div>
+     </footer>
+    </body>
+</html>
