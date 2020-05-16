@@ -27,7 +27,12 @@ def résultatLSINF1101():
 
 @app.route('/soumissionparjourLSINF1101')
 def soumissionparjourLSINF1101():
-    return render_template('soumissionparjourLSINF1101.html')
+    line = separateur(get_date_results("LSINF1101-PYTHON"))
+    labels = transform_to_label(line[0])
+    datasuccess= transform_to_data(line[0])
+    datafail = transform_to_data(line[1])
+
+    return render_template('soumissionparjourLSINF1101.html', labels=labels, datasuccess=datasuccess,datafail=datafail)
 
 @app.route('/batônnetsLSINF1101')
 def batônnetsLSINF1101():
@@ -48,7 +53,12 @@ def résultatLSINF1252():
 
 @app.route('/soumissionparjourLSINF1252')
 def soumissionparjourLSINF1252():
-    return render_template('soumissionparjourLSINF1252.html')
+    line = separateur(get_date_results("LSINF1252"))
+    labels = transform_to_label(line[0])
+    datasuccess= transform_to_data(line[0])
+    datafail = transform_to_data(line[1])
+
+    return render_template('soumissionparjourLSINF1252.html', labels=labels, datasuccess=datasuccess,datafail=datafail)
 
 @app.route('/batônnetsLSINF1252')
 def batônnetsLSINF1252():
@@ -69,7 +79,12 @@ def résultatLEPL1402():
 
 @app.route('/soumissionparjourLEPL1402')
 def soumissionparjourLEPL1402():
-    return render_template('soumissionparjourLEPL1402.html')
+    line = separateur(get_date_results("LEPL1402"))
+    labels = transform_to_label(line[0])
+    datasuccess= transform_to_data(line[0])
+    datafail = transform_to_data(line[1])
+
+    return render_template('soumissionparjourLEPL1402.html', labels=labels, datasuccess=datasuccess,datafail=datafail)
 
 @app.route('/batônnetsLEPL1402')
 def batônnetsLEPL1402():

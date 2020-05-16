@@ -17,9 +17,9 @@
           <div class="menu_déroulant">
            <li class= "déroulant"><a href="#" class= "lien" ><img src= "{{url_for('static', filename='livre.jpg')}}" width="30" height="25" class="image">   LSINF1101</li></a>
             <ul class= "sous">
-             <li><a href="{{url_for('résultatLSINF1101')}}">  Soumissions </li></a>
-             <li><a href="{{url_for('soumissionparjourLSINF1101')}}">  Timeline </li></a>
-             <li><a href="{{url_for('batônnetsLSINF1101')}}"> Exercices </li></a>
+             <li><a href="{{url_for('résultatLSINF1101')}}">  Résultat </li></a>
+             <li><a href="{{url_for('soumissionparjourLSINF1101')}}">  page 3 </li></a>
+             <li><a href="{{url_for('batônnetsLSINF1101')}}">  page 4 </li></a>
             </ul>
           </div>
         </div>
@@ -27,9 +27,9 @@
           <div class="menu_déroulant">
            <li class= "déroulant"><a href="#" class= "lien" ><img src= "{{url_for('static', filename='livre.jpg')}}" width="30" height="25" class="image">   LSINF1252</li></a>
             <ul class= "sous">
-             <li><a href="{{url_for('résultatLSINF1252')}}"> Soumissions </li></a>
-            <li><a href="{{url_for('soumissionparjourLSINF1252')}}"> Timeline </li></a>
-            <li><a href="{{url_for('batônnetsLSINF1252')}}"> Exercices </li></a>
+             <li><a href="{{url_for('résultatLSINF1252')}}"> Résultat </li></a>
+             <li><a href="{{url_for('soumissionparjourLSINF1252')}}"> page 6 </li></a>
+             <li><a href="{{url_for('batônnetsLSINF1252')}}"> page 7 </li></a>
             </ul>
           </div>
         </div>
@@ -37,9 +37,9 @@
          <div class="menu_déroulant">
           <li class= "déroulant"><a href="#" class= "lien" ><img src= "{{url_for('static', filename='livre.jpg')}}" width="30" height="25" class="image">   LEPL1402</li></a>
            <ul class= "sous">
-            <li><a href="{{url_for('résultatLEPL1402')}}"> Soumissions </li></a>
-            <li><a href="{{url_for('soumissionparjourLEPL1402')}}"> Timeline </li></a>
-            <li><a href="{{url_for('batônnetsLEPL1402')}}"> Exercices </li></a>
+            <li><a href="{{url_for('résultatLEPL1402')}}"> Résultat </li></a>
+            <li><a href="{{url_for('soumissionparjourLEPL1402')}}"> page 9 </li></a>
+            <li><a href="{{url_for('batônnetsLEPL1402')}}"> page 10 </li></a>
            </ul>
          </div>
         </div>
@@ -52,18 +52,18 @@
       <div style="width: 90%">
        <h1 class= "titre"> Résultat des soumissions </h1>
        <h2 class= "explication" align= "justify"> Vous trouverez ci-dessous le graphique qui visualise l'intégralité des soumissions des exercices du cours "LEPL1402". Le nombre d'échec est bien plus élevé car l'on comptabilise toutes leurs soumissions échouées</h2>
-      
+
         <canvas id="myChart" class= "ok"></canvas>
-        
+
         <h2 class= "legende"> (00,0%) NONE: L'élève n'a rien soumis. <br> (0,01%) ERROR: Le frontend a rencontré une erreur d’un type inconnu. <br> (00,2%) CRASH : L’évaluation a crashé.<br>
              (78,4%) FAILED: La soumission a été évaluée et l’étudiant a raté. <br> (00,1%) KILLED: le job de grading a été tué. <br> (00,1%) OVERFLOW: L’évaluation de la soumission de l’étudiant a dépassé la mémoire allouée.
              <br> (20,6%)  SUCCESS: La soumission a été évaluée et l’étudiant a réussi. <br> (00,4%) TIMEOUT: L’évaluation de la soumission de l’étudiant a dépassé le temps imparti.</h2>
-             
+
        <h1 class="titre"> Résultat final obtenu par les éléves </h1>
        <h2 class= "explication" align= "justify"> Vous trouverez ci-dessous le graphique qui visualise l'intégralité des dernières soumissions des exercices du cours "LEPL1402". Le nombre de succès est bien plus élevé car l'on ne comptabilise plus leur échec dès qu'ils réussissent</h2>
-      
+
         <canvas id="myChart2" class= "ok1"></canvas>
-        
+
         <h2 class= "legende">   (16.9%) NONE: La dernière soumission a été raté mais l'exercice n'est pas terminé.  <br>   (09.7%) ECHEC: La dernière soumission a été raté et l'exercice est terminé.<br>
              (26.6%) FAILED: La dernière soumission a été évaluée et l’étudiant a raté. <br>  (73,4%) SUCCESS: La soumission a été évaluée et l’étudiant a réussi. </h2>
       </div>
@@ -86,7 +86,7 @@
                         'rgba(241, 95, 2,1)',
                         'rgb(36,216,27)',
                         'rgba(219, 222, 55,1)',
-                        
+
                   ]
               }],
           },
@@ -131,13 +131,8 @@
       </script>
 
      <footer class="menu2">
-       <div class="lien2">
-        FONDATEUR DU SITE :
-           <a href="{{url_for('page_contact')}}"class= "lien">  ALEXANDRE VANDERVALE</a>
-           <a href="{{url_for('page_contact')}}"class= "lien">  GUILLAUME DUERINCKX</a>
-           <a href="{{url_for('page_contact')}}"class= "lien">  ADRIEN TALOM</a>
-           ©Copyright 2019-2020 STAT-INGINIOUS
-       </div>
+      <div class="lien2">
+      </div>
      </footer>
     </body>
 </html>
