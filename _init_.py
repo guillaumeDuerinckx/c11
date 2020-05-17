@@ -36,7 +36,21 @@ def soumissionparjourLSINF1101():
 
 @app.route('/batônnetsLSINF1101')
 def batônnetsLSINF1101():
-    return render_template('batônnetsLSINF1101.html')
+    true_e= final("LSINF1101-PYTHON")[0]
+    trust= [d[0] for d in true_e]
+    false_e=final("LSINF1101-PYTHON")[1]
+    falsest= [d[0] for d in false_e]
+    true_e2= final2("LSINF1101-PYTHON")[0]
+    trust2= [d[0] for d in true_e2]
+    false_e2=final2("LSINF1101-PYTHON")[1]
+    falsest2= [d[0] for d in false_e2]
+    percent_e=get_percent1('LSINF1101-PYTHON')
+    percent=[d[0] for d in percent_e]
+    percent2_e=get_percent2('LSINF1101-PYTHON')
+    percent2=[d[0] for d in percent2_e]
+    labels=[d[1] for d in true_e]
+
+    return render_template('batônnetsLSINF1101.html',trust=trust, falsest=falsest,percent=percent,labels =labels, percent2= percent2, trust2= trust2, falsest2= falsest2)
 
 @app.route('/résultatLSINF1252')
 def résultatLSINF1252():
@@ -62,7 +76,21 @@ def soumissionparjourLSINF1252():
 
 @app.route('/batônnetsLSINF1252')
 def batônnetsLSINF1252():
-    return render_template('batônnetsLSINF1252.html')
+    true_e= final("LSINF1252")[0]
+    trust= [d[0] for d in true_e]
+    false_e=final("LSINF1252")[1]
+    falsest= [d[0] for d in false_e]
+    true_e2= final2("LSINF1252")[0]
+    trust2= [d[0] for d in true_e2]
+    false_e2=final2("LSINF1252")[1]
+    falsest2= [d[0] for d in false_e2]
+    percent_e=get_percent1('LSINF1252')
+    percent=[d[0] for d in percent_e]
+    percent2_e=get_percent2('LSINF1252')
+    percent2=[d[0] for d in percent2_e]
+    labels=[d[1] for d in true_e]
+
+    return render_template('batônnetsLSINF1252.html',trust=trust, falsest=falsest,percent=percent,labels =labels, percent2= percent2, trust2= trust2, falsest2= falsest2)
 
 @app.route('/résultatLEPL1402')
 def résultatLEPL1402():
@@ -88,7 +116,21 @@ def soumissionparjourLEPL1402():
 
 @app.route('/batônnetsLEPL1402')
 def batônnetsLEPL1402():
-    return render_template('batônnetsLEPL1402.html')
+    true_e= final("LEPL1402")[0]
+    trust= [d[0] for d in true_e]
+    false_e=final("LEPL1402")[1]
+    falsest= [d[0] for d in false_e]
+    true_e2= final2("LEPL1402")[0]
+    trust2= [d[0] for d in true_e2]
+    false_e2=final2("LEPL1402")[1]
+    falsest2= [d[0] for d in false_e2]
+    percent_e=get_percent1('LEPL1402')
+    percent=[d[0] for d in percent_e]
+    percent2_e=get_percent2('LEPL1402')
+    percent2=[d[0] for d in percent2_e]
+    labels=[d[1] for d in true_e]
+
+    return render_template('batônnetsLEPL1402.html',trust=trust, falsest=falsest,percent=percent,labels =labels, percent2= percent2, trust2= trust2, falsest2= falsest2)
 
 @app.route('/page_contact')
 def page_contact():
